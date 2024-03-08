@@ -37,13 +37,14 @@ body {
     height: 100vh;
     box-sizing: border-box;
     margin-right: 10px;
+    overflow: auto;
 }
 
 .second {
     flex-basis: 53%;
     margin: 5px 0;
-    height: 150vh;
-    overflow-y: auto;
+    height: 100vh;
+    overflow: auto;
     box-sizing: border-box;
     margin-right: 10px;
 }
@@ -52,6 +53,7 @@ body {
     flex-basis: 28%;
     height: 100vh;
     margin: 5px 0;
+    overflow: auto;
     flex-direction: column;
     box-sizing: border-box;
 }
@@ -69,13 +71,14 @@ body {
     color: white;
 }
 
-
 .first i {
     font-size: 20px;
 }
 
 nav ul li {
     margin: 10px 0;
+    display: flex;
+    align-items: center;
     list-style: none;
     cursor: pointer;
 }
@@ -96,6 +99,7 @@ nav ul li i {
     display: flex;
 }
 
+
 .list1 {
     display: flex;
     justify-content: space-between;
@@ -103,30 +107,41 @@ nav ul li i {
     font-weight: bold;
 }
 
+
 .list1 ul li {
     display: inline-block;
     list-style: none;
     cursor: pointer;
 }
 
+.play1 {
+    margin-left: 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.play2 {
+    float: right;
+    align-items: center;
+}
+
 #lib1 {
-    margin-right: 8px;
     font-size: 20px;
+    margin-right: 10px;
 }
 
 #lib2 {
-    margin-right: 80px;
     font-size: 17px;
 }
 
 #lib3 {
     font-size: 17px;
-    margin-right: 18px;
-    margin-left: 30px;
+    margin-right: 10px;
 }
 
 #lib4 {
-    font-size: 15px;
+   
     font-size: 14px;
 }
 
@@ -142,24 +157,21 @@ nav ul li i {
 
 .list3 {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.list3 span {
+
+.searchbar {
     font-size: 17px;
-    margin: 0px 0;
-    margin-left: 10px;
     cursor: pointer;
 }
 
-.l31 {
-    margin-right: 180px;
+.l32 {
+    font-size: 17px;
+    cursor: pointer;
 }
-
-.l32 i {
-    margin-left: 8px;
-    font-size: 16px;
-}
-
 .list4 {
     display: flex;
     align-items: center;
@@ -193,9 +205,11 @@ nav ul li i {
 
 .navbar {
     display: flex;
-    justify-content: baseline;
+    justify-content: space-between;
+    align-items: center;
     margin: 20px 0;
     font-size: 18px;
+    width: 100%;
 }
 
 .navbar nav span {
@@ -211,7 +225,6 @@ nav ul li i {
 }
 
 .n2 i {
-    margin-right: 320px;
     background-color: rgba(0, 0, 0, 0.505);
     padding: 10px 10px;
     border-radius: 50%;
@@ -238,16 +251,25 @@ nav ul li i {
     background-color: rgba(0, 0, 0, 0.505);
     padding: 10px 10px;
     border-radius: 50%;
+    margin-right: 5px;
 }
 
+.fplay
+{
+    margin:5px 0;
+}
+.splay
+{
+    margin:5px 0;
+}
 .playlist {
-    margin: 5px 20px;
+    margin: 10px 20px;
+    padding: 10px 10px;
 }
 
 .playlistItem {
     display: flex;
     margin: 8px 10px;
-
 }
 
 .item {
@@ -260,6 +282,8 @@ nav ul li i {
     font-family: 'Mulish', sans-serif;
     font-size: 15px;
     font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
     cursor: pointer;
 }
 
@@ -271,7 +295,6 @@ nav ul li i {
 
 .content {
     margin: 5px 5px;
-    padding: 0px 3px;
 }
 
 .content span {
@@ -313,7 +336,6 @@ nav ul li i {
     font-size: 15px;
     margin: 0 15px;
     margin-top: 15px;
-    ;
     opacity: 0.5;
 }
 
@@ -336,7 +358,7 @@ nav ul li i {
 
 .qitem:hover {
     background-color: #4D4D4D;
-   cursor: pointer;
+    cursor: pointer;
 }
 
 .qpic img {
@@ -390,7 +412,7 @@ nav ul li i {
 .progressbar {
     display: flex;
     align-items: center;
-  
+
 }
 
 .progressbar input {
@@ -399,26 +421,20 @@ nav ul li i {
 }
 
 .playicon {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height: 0%;;
+    width:100%;
+    overflow: hidden; 
+    font-size: 14px;
+    position: relative;
 }
 
 .songlistplay i {
-    position: relative;
-    left: 105px;
-    bottom: 85px;
+    position: absolute;
     font-size: 20px;
-}
-
-.playicon {
-    height: 0%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 14px;
+    right: 2px;
+    bottom: 32px;
+    height: 100%;
+    color: rgb(98, 197, 98);
 }
 
 .item:hover {
@@ -426,12 +442,10 @@ nav ul li i {
 }
 
 .item:hover .playicon {
-    height: 100%;
     overflow: visible;
 }
 
-.qitem i
-{
+.qitem i {
     height: 0%;
     opacity: 0.5;
     overflow: hidden;
@@ -440,8 +454,9 @@ nav ul li i {
     justify-content: center;
     flex-direction: column;
     font-size: 14px;
+    color:rgb(98, 197, 98); ;
 }
-.qitem:hover  i
-{
+
+.qitem:hover i {
     overflow: visible;
 }
