@@ -53,6 +53,7 @@ body {
     flex-basis: 28%;
     height: 100vh;
     margin: 5px 0;
+    width: auto;
     overflow: auto;
     flex-direction: column;
     box-sizing: border-box;
@@ -60,6 +61,7 @@ body {
 
 .first nav {
     margin: 5px 0px;
+    width: auto;
     margin-left: 10px;
     height: 12vh;
     border-radius: 15px;
