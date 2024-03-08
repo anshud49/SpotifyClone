@@ -462,3 +462,62 @@ nav ul li i {
 .qitem:hover i {
     overflow: visible;
 }
+@media only screen and (max-width: 900px)
+ {
+
+    .first
+    {
+        flex-basis: 10%;
+    }
+    
+    .first nav ul
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         height: 14vh;
+    }
+    .first nav ul li 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+  
+    .list1 ,.list3, .list4
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+      .l31
+    {
+        margin-right: 10px;
+    }
+    .hide
+    {
+      display: none;
+    }
+    #lib2
+    {
+        display: none;
+    }
+    #lib3
+    {
+        display: none;
+      
+    }
+    #lib4
+    {
+        display: none;
+    }
+    
+    .list4 img {
+        width: 50px;
+        margin-right: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+ }
