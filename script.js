@@ -168,3 +168,38 @@ document.getElementById('previous').addEventListener('click', () => {
     masterplay.classList.remove('fa-circle-play');
     masterplay.classList.add('fa-circle-pause');
 })
+
+function adjustImageWidth() {
+    if (window.innerWidth < 900) {
+        var items = document.querySelectorAll('.item');
+        items.forEach(function(item) {
+            var parentWidth = item.offsetWidth; // Get width of parent item
+            var image = item.querySelector('.pic img');
+            // Calculate the minimum width based on 8vw or 8% of the viewport width
+            var minWidth = Math.max(8 * window.innerWidth / 100, 8);
+            // Adjust the image width based on the parent's width and any padding, ensuring it's at least 8vw
+            image.style.width = Math.max(parentWidth - 20, minWidth) + 'px'; // Subtracting padding
+        });
+    } else {
+        var items = document.querySelectorAll('.item');
+        var maxWidth = 0;
+
+        // Find the maximum width among all .item divs
+        items.forEach(function(item) {
+            maxWidth = Math.max(maxWidth, item.offsetWidth);
+        });
+
+        // Set the width of all .item divs and their pic images to the maximum width
+        items.forEach(function(item) {
+            var image = item.querySelector('.pic img');
+            item.style.width = maxWidth + 'px';
+            image.style.width = '100%'; // Set the image width to fill the parent div
+        });
+    }
+}
+
+// Call the function when the window is resized
+window.addEventListener('resize', adjustImageWidth);
+
+// Call the function initially
+adjustImageWidth();
