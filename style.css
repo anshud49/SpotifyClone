@@ -340,7 +340,7 @@ nav ul li i {
 }
 
 .cover img {
-    height: 42vh;
+    height: auto;
     width: 23vw;
     border-radius: 15px;
 }
@@ -567,5 +567,13 @@ nav ul li i {
    {
     height: 4vh;
     width: 4vh;
+   }
+   .sname
+   {
+    font-size:15px;
+   }
+   .artist
+   {
+    font-size:12px;
    }
  }
