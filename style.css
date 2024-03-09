@@ -62,9 +62,11 @@ body {
 }
 
 .first nav {
-    margin: 5px 0px;
+    /* margin: 5px 0px; */
+
     width: auto;
-    margin-left: 10px;
+    margin: 0 10px;
+    display: flex;
     border-radius: 15px;
     padding: 10px 10px;
     font-family: 'Roboto Condensed', sans-serif;
@@ -78,6 +80,7 @@ body {
     font-size: 20px;
 }
 
+
 nav ul li {
     margin: 10px 0;
     display: flex;
@@ -87,15 +90,13 @@ nav ul li {
 }
 
 nav ul li i {
-    margin: 5px 0;
-    margin-right: 15px;
+    margin: 5px 10px;
     font-size: 25px;
 }
 
 .library {
-    margin: 5px 0px;
-    margin-left: 10px;
-    padding: 10px;
+    margin: 5px 10px;
+    padding: 10px 10px;
     height: 85vh;
     background-color: #1b1919b6;
     border-radius: 12px;
@@ -111,14 +112,7 @@ nav ul li i {
 }
 
 
-.list1 ul li {
-    display: inline-block;
-    list-style: none;
-    cursor: pointer;
-}
-
 .play1 {
-    margin-left: 0px;
     float: left;
     display: flex;
     align-items: center;
@@ -144,7 +138,7 @@ nav ul li i {
 }
 
 #lib4 {
-   
+
     font-size: 14px;
 }
 
@@ -162,19 +156,23 @@ nav ul li i {
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
 
 .searchbar {
+    float: left;
     font-size: 17px;
     cursor: pointer;
 }
 
 .l32 {
+    float: right;
     font-size: 17px;
     cursor: pointer;
 }
+
 .list4 {
     display: flex;
     align-items: center;
@@ -257,14 +255,14 @@ nav ul li i {
     margin-right: 5px;
 }
 
-.fplay
-{
-    margin-bottom:10px;
+.fplay {
+    margin-bottom: 10px;
 }
-.splay
-{
-    margin-top:10px ;
+
+.splay {
+    margin-top: 10px;
 }
+
 .playlist {
     margin: 10px 20px;
     padding: 10px 10px;
@@ -292,15 +290,15 @@ nav ul li i {
     cursor: pointer;
 }
 
-.pic
-{
+.pic {
     display: flex;
     align-items: center;
     margin: auto;
 }
+
 .pic img {
-   height: 20vh;
-   width: 9vw;
+    height: 20vh;
+    width: 9vw;
     border-radius: 10px;
 }
 
@@ -357,7 +355,7 @@ nav ul li i {
     padding: 20px 10px;
     background-color: #363636a4;
     border-radius: 10px;
- 
+
 }
 
 .queue span {
@@ -435,9 +433,10 @@ nav ul li i {
 }
 
 .playicon {
-    height: 0%;;
-    width:100%;
-    overflow: hidden; 
+    height: 0%;
+    ;
+    width: 100%;
+    overflow: hidden;
     font-size: 14px;
     position: relative;
 }
@@ -468,85 +467,89 @@ nav ul li i {
     justify-content: center;
     flex-direction: column;
     font-size: 14px;
-    color:rgb(98, 197, 98); ;
+    color: rgb(98, 197, 98);
+    ;
 }
 
 .qitem:hover i {
     overflow: visible;
 }
-@media only screen and (max-width: 900px)
- {
 
-    .first
-    {
+@media only screen and (max-width: 940px) {
+
+    .first {
         flex-basis: 10%;
     }
-    .second
-    {
+
+    .second {
         flex-basis: 60%;
     }
-    .third
-    {
+
+    .third {
         flex-basis: 30%;
     }
-    .first nav ul
-    {
+
+    .first nav ul {
         display: flex;
         justify-content: center;
         align-items: center;
-         height: 14vh;
+        height: 14vh;
     }
-    .first nav ul li 
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-  
-    .list1 ,.list3, .list4
-    {
+
+    .first nav ul li {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
-      .l31
-    {
-        margin-right: 10px;
+
+    .list1,
+    .list2,
+    .list3,
+    .list4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .hide
-    {
-      display: none;
-    }
-    #lib2
-    {
+
+    .hide {
         display: none;
     }
-    #lib3
-    {
-        display: none;
-      
+
+    #lib1 {
+        font-size: 20px;
+        margin-right: 0px;
     }
-    #lib4
-    {
+
+    #lib2 {
         display: none;
     }
-    
+
+    #lib3 {
+        display: none;
+        margin-right: 0px;
+    }
+
+    #lib4 {
+        display: none;
+    }
+
+
     .list4 img {
         width: 50px;
-        margin-right: 8px;
+        margin: 0 8px;
         border-radius: 50%;
         cursor: pointer;
     }
+
     .playicon {
-        height: 0%;;
-        width:100%;
-        overflow: hidden; 
+        height: 0%;
+        ;
+        width: 100%;
+        overflow: hidden;
         font-size: 12px;
         position: relative;
     }
-    
+
     .songlistplay i {
         position: absolute;
         font-size: 20px;
@@ -555,25 +558,29 @@ nav ul li i {
         height: 100%;
         color: rgb(98, 197, 98);
     }
-    
- }
- @media only screen and (max-width: 800px)
- {
-   .qcontent
-   {
-    font-size: 12px;
-   }
-   .qpic img
-   {
-    height: 4vh;
-    width: 4vh;
-   }
-   .sname
-   {
-    font-size:15px;
-   }
-   .artist
-   {
-    font-size:12px;
-   }
- }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .qcontent {
+        font-size: 12px;
+    }
+
+    .qpic img {
+        height: 4vh;
+        width: 4vh;
+    }
+
+    .sname {
+        font-size: 15px;
+    }
+
+    .artist {
+        font-size: 12px;
+    }
+
+    .list4 img {
+        width: 40px;
+    }
+}
+
