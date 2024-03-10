@@ -46,6 +46,7 @@ body {
     flex-basis: 53%;
     margin: 5px 0;
     height: 100vh;
+    width: auto;
     overflow: auto;
     box-sizing: border-box;
     margin-right: 10px;
@@ -352,10 +353,9 @@ nav ul li i {
 
 .queue {
     margin: 10px 10px;
-    padding: 20px 10px;
+    padding: 10px 10px;
     background-color: #363636a4;
     border-radius: 10px;
-
 }
 
 .queue span {
@@ -563,12 +563,13 @@ nav ul li i {
 
 @media only screen and (max-width: 800px) {
     .qcontent {
-        font-size: 12px;
+        font-size: 11px;
     }
 
-    .qpic img {
-        height: 4vh;
-        width: 4vh;
+    .qpic img 
+    {
+        height: auto;
+        width: 3vh;
     }
 
     .sname {
@@ -584,3 +585,14 @@ nav ul li i {
     }
 }
 
+@media only screen and (max-width: 650px)
+{
+    .qpic img 
+    {
+        height: auto;
+        width: 2vh;
+    }
+    .qcontent {
+        font-size: 9px;
+    }
+}

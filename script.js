@@ -203,3 +203,4 @@ window.addEventListener('resize', adjustImageWidth);
 
 // Call the function initially
 adjustImageWidth();
+
