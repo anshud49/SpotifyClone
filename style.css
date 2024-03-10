@@ -595,4 +595,12 @@ nav ul li i {
     .qcontent {
         font-size: 9px;
     }
+    .songlistplay i {
+        position: absolute;
+        font-size: 18px;
+        right: 10px;
+        bottom: 22px;
+        height: 100%;
+        color: rgb(98, 197, 98);
+    }
 }
