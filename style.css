@@ -604,3 +604,26 @@ nav ul li i {
         color: rgb(98, 197, 98);
     }
 }
+@media only screen and (max-width: 600px)
+{
+    .first
+    {
+        display: none;
+    }
+    .second
+    {
+        flex-basis: 100%;
+    }
+    .third
+    {
+        display: none;
+    }
+    .songlistplay i {
+        position: absolute;
+        font-size: 18px;
+        right: 2px;
+        bottom: 22px;
+        height: 100%;
+        color: rgb(98, 197, 98);
+    }
+}
