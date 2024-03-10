@@ -543,7 +543,6 @@ nav ul li i {
 
     .playicon {
         height: 0%;
-        ;
         width: 100%;
         overflow: hidden;
         font-size: 12px;
@@ -625,5 +624,18 @@ nav ul li i {
         bottom: 22px;
         height: 100%;
         color: rgb(98, 197, 98);
+    }
+    .content {
+        margin: 5px 5px;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .content span {
+        margin: 5px 0px;
+        font-size: 10px;
+        font-family: 'Gowun Batang', serif;
+        opacity: .5;
     }
 }
