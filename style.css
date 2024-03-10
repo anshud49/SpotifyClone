@@ -161,7 +161,12 @@ nav ul li i {
     width: 100%;
 }
 
-
+.navbar a
+{
+    text-decoration: none;
+    color: white;
+    
+}
 .searchbar {
     float: left;
     font-size: 17px;
