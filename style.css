@@ -385,19 +385,23 @@ nav ul li i {
 
 .bottom {
     position: sticky;
-    height: 100px;
+    height: 12vh;
+    overflow: auto;
     background-color: black;
     color: white;
+    padding: 2px 2px;
     bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
 }
 
 .icons {
-    margin-top: 20px;
-    margin-bottom: 8px;
+
+    margin-top: 2px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
 }
@@ -405,9 +409,10 @@ nav ul li i {
 .icons i {
     cursor: pointer;
     margin: 0 10px;
+
 }
 
-#masterplay {
+.masterplay1 {
     opacity: 0.9;
 }
 
@@ -434,11 +439,15 @@ nav ul li i {
 
 .playicon {
     height: 0%;
-    ;
     width: 100%;
     overflow: hidden;
     font-size: 14px;
     position: relative;
+}
+
+.sinfo {
+    font-size: 15px;
+    margin-top: 2px;
 }
 
 .songlistplay i {
@@ -558,6 +567,45 @@ nav ul li i {
         color: rgb(98, 197, 98);
     }
 
+    .bottom {
+        height: 11vh;
+    }
+
+    .icons {
+        margin-top: 4px;
+        margin-bottom: 5px;
+        padding: 2px 2px;
+        display: flex;
+        align-items: center;
+    }
+    .icons i {
+        margin: 0 8px;
+    }
+    #masterplay {
+        opacity: 0.9;
+        font-size: 25px;
+    }
+
+    #previous {
+        font-size: 18px;
+        opacity: 0.5;
+    }
+
+    #next {
+        font-size: 18px;
+        opacity: 0.5;
+    }
+
+
+    .progressbar input {
+        width: 30vw;
+    }
+
+    .sinfo {
+        font-size: 14px;
+        margin-top: 2px;
+    }
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -565,8 +613,7 @@ nav ul li i {
         font-size: 11px;
     }
 
-    .qpic img 
-    {
+    .qpic img {
         height: auto;
         width: 3vh;
     }
@@ -582,18 +629,56 @@ nav ul li i {
     .list4 img {
         width: 40px;
     }
+
+    .bottom {
+        height: 9vh;
+    }
+
+    .icons {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        padding: 2px 2px;
+
+    }
+
+    #masterplay {
+        opacity: 0.9;
+        font-size: 22px;
+    }
+
+    #previous {
+        font-size: 15px;
+        opacity: 0.5;
+    }
+
+    #next {
+        font-size: 15px;
+        opacity: 0.5;
+    }
+
+    .progressbar input {
+        height:1vh;
+        cursor: pointer;
+    }
+    .sinfo {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+    .icons i {
+        margin: 0 7px;
+    }
 }
 
-@media only screen and (max-width: 650px)
-{
-    .qpic img 
-    {
+@media only screen and (max-width: 650px) {
+    .qpic img {
         height: auto;
         width: 2vh;
     }
+
     .qcontent {
         font-size: 9px;
     }
+
     .songlistplay i {
         position: absolute;
         font-size: 18px;
@@ -603,20 +688,20 @@ nav ul li i {
         color: rgb(98, 197, 98);
     }
 }
-@media only screen and (max-width: 600px)
-{
-    .first
-    {
+
+@media only screen and (max-width: 600px) {
+    .first {
         display: none;
     }
-    .second
-    {
+
+    .second {
         flex-basis: 100%;
     }
-    .third
-    {
+
+    .third {
         display: none;
     }
+
     .songlistplay i {
         position: absolute;
         font-size: 18px;
@@ -625,17 +710,55 @@ nav ul li i {
         height: 100%;
         color: rgb(98, 197, 98);
     }
+
     .content {
         margin: 5px 5px;
         font-size: 12px;
         display: flex;
         flex-direction: column;
     }
-    
+
     .content span {
         margin: 5px 0px;
         font-size: 10px;
         font-family: 'Gowun Batang', serif;
         opacity: .5;
+    }
+    .bottom {
+        height: 7vh;
+    }
+
+    .icons {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        padding: 2px 2px;
+
+    }
+
+    #masterplay {
+        opacity: 0.9;
+        font-size: 17px;
+    }
+
+    #previous {
+        font-size: 12px;
+        opacity: 0.5;
+    }
+
+    #next {
+        font-size: 12px;
+        opacity: 0.5;
+    }
+
+    .progressbar input {
+        height:.7vh;
+        cursor: pointer;
+    }
+    .sinfo {
+        font-size: 10px;
+        margin-top: 4px;
+    }
+    .icons i {
+        margin: 0 5px;
     }
 }
