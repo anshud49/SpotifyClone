@@ -161,12 +161,12 @@ nav ul li i {
     width: 100%;
 }
 
-.navbar a
-{
+.navbar a {
     text-decoration: none;
     color: white;
-    
+
 }
+
 .searchbar {
     float: left;
     font-size: 17px;
@@ -210,6 +210,9 @@ nav ul li i {
     border-radius: 10px;
 }
 
+
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -219,8 +222,8 @@ nav ul li i {
     width: 100%;
 }
 
-.navbar nav span {
-    margin-right: 10px;
+.navbar span {
+  
     cursor: pointer;
 }
 
@@ -259,6 +262,33 @@ nav ul li i {
     padding: 10px 10px;
     border-radius: 50%;
     margin-right: 5px;
+}
+
+.home {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home span {
+    margin: 0 0;
+    display: none;
+}
+
+#home1 i{
+    font-size: 35px;
+    padding: 10px 10px;
+    color: green;
+    cursor: pointer;
+}
+
+#home2 {
+    color: white;
+    font-size: 20px;
+    margin-left: 5px;;
+    padding: 10px 10px;
+    cursor: pointer;
 }
 
 .fplay {
@@ -577,37 +607,39 @@ nav ul li i {
     }
 
     .icons {
-        margin-top: 4px;
+        margin-top: 10px;
         margin-bottom: 5px;
         padding: 2px 2px;
         display: flex;
         align-items: center;
     }
+
     .icons i {
         margin: 0 8px;
     }
+
     #masterplay {
         opacity: 0.9;
-        font-size: 25px;
+        font-size: 30px;
     }
 
     #previous {
-        font-size: 18px;
+        font-size: 22px;
         opacity: 0.5;
     }
 
     #next {
-        font-size: 18px;
+        font-size: 22px;
         opacity: 0.5;
     }
 
 
     .progressbar input {
-        width: 30vw;
+        width: 32vw;
     }
 
     .sinfo {
-        font-size: 14px;
+        font-size: 16px;
         margin-top: 2px;
     }
 
@@ -640,35 +672,36 @@ nav ul li i {
     }
 
     .icons {
-        margin-top: 10px;
+        margin-top: 8px;
         margin-bottom: 5px;
         padding: 2px 2px;
-
     }
 
     #masterplay {
         opacity: 0.9;
-        font-size: 22px;
+        font-size: 25px;
     }
 
     #previous {
-        font-size: 15px;
+        font-size: 18px;
         opacity: 0.5;
     }
 
     #next {
-        font-size: 15px;
+        font-size: 18px;
         opacity: 0.5;
     }
 
     .progressbar input {
-        height:1vh;
+        height: 1vh;
         cursor: pointer;
     }
+
     .sinfo {
-        font-size: 12px;
+        font-size: 14px;
         margin-top: 2px;
     }
+
     .icons i {
         margin: 0 7px;
     }
@@ -707,6 +740,21 @@ nav ul li i {
         display: none;
     }
 
+    .n1 {
+        display: none;
+    }
+
+    .n2 {
+        display: none;
+    }
+
+    .home span {
+        margin: 0 0;
+        display: inline;
+    }
+
+    
+
     .songlistplay i {
         position: absolute;
         font-size: 18px;
@@ -729,8 +777,9 @@ nav ul li i {
         font-family: 'Gowun Batang', serif;
         opacity: .5;
     }
+
     .bottom {
-        height: 7vh;
+        height: 9vh;
     }
 
     .icons {
@@ -742,27 +791,29 @@ nav ul li i {
 
     #masterplay {
         opacity: 0.9;
-        font-size: 17px;
+        font-size: 22px;
     }
 
     #previous {
-        font-size: 12px;
+        font-size: 15px;
         opacity: 0.5;
     }
 
     #next {
-        font-size: 12px;
+        font-size: 15px;
         opacity: 0.5;
     }
 
     .progressbar input {
-        height:.7vh;
+        height: 1vh;
         cursor: pointer;
     }
+
     .sinfo {
-        font-size: 10px;
+        font-size: 12px;
         margin-top: 4px;
     }
+
     .icons i {
         margin: 0 5px;
     }
