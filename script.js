@@ -42,12 +42,15 @@ songitems.forEach((element, i) => {
 
 //play pause buttons
 masterplay.addEventListener('click', () => {
+    const playIcon = document.getElementById(songIndex.toString());
     if (audioelement.paused || audioelement.currentTime <= 0) {
         audioelement.play();
         masterplay.classList.remove('fa-circle-play');
         masterplay.classList.add('fa-circle-pause');
         masterplay2.classList.remove('fa-circle-play');
         masterplay2.classList.add('fa-circle-pause');
+        playIcon.classList.remove('fa-circle-play');
+        playIcon.classList.add('fa-circle-pause');
         gif.style.opacity = 1;
     }
     else {
@@ -56,6 +59,8 @@ masterplay.addEventListener('click', () => {
         masterplay.classList.add('fa-circle-play');
         masterplay2.classList.remove('fa-circle-pause');
         masterplay2.classList.add('fa-circle-play');
+        playIcon.classList.remove('fa-circle-pause');
+        playIcon.classList.add('fa-circle-play');
         gif.style.opacity = 0;
     }
 })
@@ -90,7 +95,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
 
         songIndex = parseInt(e.target.id);
         const playIcon = e.target;
-
+        
         
         if ( audioelement.paused || audioelement.currentTime <= 0) {
 
@@ -233,12 +238,16 @@ adjustImageWidth();
 
 // Event listener for masterplay2
 document.getElementById('masterplay2').addEventListener('click', () => {
+    const playIcon = document.getElementById(songIndex.toString());
+
     if (audioelement.paused || audioelement.currentTime <= 0) {
         audioelement.play();
         masterplay.classList.remove('fa-circle-play');
         masterplay.classList.add('fa-circle-pause');
         masterplay2.classList.remove('fa-circle-play');
         masterplay2.classList.add('fa-circle-pause');
+        playIcon.classList.remove('fa-circle-play');
+        playIcon.classList.add('fa-circle-pause');
         gif.style.opacity = 1;
     }
     else {
@@ -247,6 +256,8 @@ document.getElementById('masterplay2').addEventListener('click', () => {
         masterplay.classList.add('fa-circle-play');
         masterplay2.classList.remove('fa-circle-pause');
         masterplay2.classList.add('fa-circle-play');
+        playIcon.classList.remove('fa-circle-pause');
+        playIcon.classList.add('fa-circle-play');
         gif.style.opacity = 0;
     }
 });
