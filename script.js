@@ -317,7 +317,7 @@ document.getElementById('previous1').addEventListener('click', () => {
 document.getElementById('up').addEventListener('click', function() {
     // Change background-color of .second
     document.querySelector('.second').style.backgroundColor = 'rgba(13, 156, 185, 0.322)';
-    
+    document.querySelector('.second').style.padding = '20px 20px';
     // Show .second and .phone1
     document.querySelectorAll('.second , .phone1').forEach(function(element) {
         element.style.display = 'inline';
@@ -332,6 +332,7 @@ document.getElementById('up').addEventListener('click', function() {
 document.getElementById('down').addEventListener('click', function() {
 
     document.querySelector('.second').style.backgroundColor = '#1b1919b6'; 
+    document.querySelector('.second').style.padding = '0px 0px';
     document.querySelectorAll('.phone1').forEach(function(element) {
         element.style.display = 'none'; 
     });

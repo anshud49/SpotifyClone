@@ -265,7 +265,7 @@ nav ul li i {
 }
 
 .home {
-    margin-left: 20px;
+    margin-left: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -287,7 +287,6 @@ nav ul li i {
     color: white;
     font-size: 20px;
     margin-left: 5px;
-    ;
     padding: 10px 10px;
     cursor: pointer;
 }
@@ -806,7 +805,7 @@ nav ul li i {
     .second {
         flex-basis: 100%;
         margin: 0 0;
-        padding: 20px 20px;
+        padding: 0px 0px;
     }
 
     .third {
@@ -901,4 +900,5 @@ nav ul li i {
     .n4{
         display: none;
     }
+   
 }
