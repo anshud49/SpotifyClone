@@ -364,5 +364,3 @@ function adjustDisplay() {
 // Call the adjustDisplay function when the page loads
 adjustDisplay();
 
-// Add event listener for the resize event
-window.addEventListener('resize', adjustDisplay);
