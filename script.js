@@ -168,10 +168,16 @@ document.getElementById('next').addEventListener('click', () => {
     gif.style.opacity = 1;
     masterSongName.innerText = songs[songIndex].songName;
     sname.innerText = songs[songIndex].songName;
+    sname1.innerText = songs[songIndex].songName; // Update sname1
+    sname2.innerText = songs[songIndex].songName; 
     cov.src = songs[songIndex].coverpath;
+    cov2.src = songs[songIndex].coverpath;
     art.innerText = songs[songIndex].artist;
+    art2.innerText = songs[songIndex].artist;
     masterplay.classList.remove('fa-circle-play');
     masterplay.classList.add('fa-circle-pause');
+    masterplay2.classList.remove('fa-circle-play');
+    masterplay2.classList.add('fa-circle-pause');
 })
 
 document.getElementById('previous').addEventListener('click', () => {
@@ -188,10 +194,16 @@ document.getElementById('previous').addEventListener('click', () => {
     audioelement.play();
     gif.style.opacity = 1;
     sname.innerText = songs[songIndex].songName;
+    sname1.innerText = songs[songIndex].songName; // Update sname1
+    sname2.innerText = songs[songIndex].songName;
     cov.src = songs[songIndex].coverpath;
+    cov2.src = songs[songIndex].coverpath;
     art.innerText = songs[songIndex].artist;
+    art2.innerText = songs[songIndex].artist;
     masterplay.classList.remove('fa-circle-play');
     masterplay.classList.add('fa-circle-pause');
+    masterplay2.classList.remove('fa-circle-play');
+    masterplay2.classList.add('fa-circle-pause');
 })
 
 function adjustImageWidth() {
@@ -272,6 +284,8 @@ document.getElementById('next1').addEventListener('click', () => {
     art2.innerText = songs[songIndex].artist; // Update art2
     masterplay2.classList.remove('fa-circle-play');
     masterplay2.classList.add('fa-circle-pause');
+    masterplay.classList.remove('fa-circle-play');
+    masterplay.classList.add('fa-circle-pause');
 });
 
 // Event listener for previous1
@@ -296,6 +310,8 @@ document.getElementById('previous1').addEventListener('click', () => {
     art2.innerText = songs[songIndex].artist; // Update art2
     masterplay2.classList.remove('fa-circle-play');
     masterplay2.classList.add('fa-circle-pause');
+    masterplay.classList.remove('fa-circle-play');
+    masterplay.classList.add('fa-circle-pause');
 });
 
 document.getElementById('up').addEventListener('click', function() {
