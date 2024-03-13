@@ -589,7 +589,7 @@ nav ul li i {
     opacity: .5;
 }
 
-@media only screen and (max-width: 940px) {
+@media only screen and (max-width: 950px) {
 
     .first {
         flex-basis: 10%;
