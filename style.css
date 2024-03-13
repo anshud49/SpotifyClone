@@ -335,6 +335,7 @@ nav ul li i {
     height: 20vh;
     width: 9vw;
     border-radius: 10px;
+    aspect-ratio: 16/9;
 }
 
 .content {
