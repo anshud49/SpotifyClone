@@ -26,7 +26,7 @@ let songs = [
     { songName: "Sajna Barse Hai", artist: "Ustad Rashid Khan Sahab", filepath: "songs/3.mp3", coverpath: "covers/3.jpg" },
     { songName: "Lag Ja Gale", artist: "Lata Mangeshkar", filepath: "songs/4.mp3", coverpath: "covers/4.jpg" },
     { songName: "Ye Dil Tum Bin", artist: "Lata Mangeshkar", filepath: "songs/5.mp3", coverpath: "covers/5.jpg" },
-    { songName: "Do dil mil rahe", artist: "Kumar Sanu", filepath: "songs/6.mp3", coverpath: "covers/6.jpg" },
+    { songName: "Do Dil Mil Rahe", artist: "Kumar Sanu", filepath: "songs/6.mp3", coverpath: "covers/6.jpg" },
     { songName: "Ye Jo Halka Halka", artist: "Nustrat Fateh Ali Khan Sahab", filepath: "songs/7.mp3", coverpath: "covers/7.jpg" },
     { songName: "Achha Ji Main Haari", artist: "Mohammed Rafi", filepath: "songs/8.mp3", coverpath: "covers/8.jpg" },
     { songName: "Ye Haseen Vadiya ", artist: "S.P. Balasubrahmanyam", filepath: "songs/9.mp3", coverpath: "covers/9.jpg" },
@@ -99,11 +99,10 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         
         if ( audioelement.paused || audioelement.currentTime <= 0) {
 
-            playIcon.classList.remove('fa-circle-play');
-            playIcon.classList.add('fa-circle-pause');
-            audioelement.src = `songs/${songIndex + 1}.mp3`;
             if(prevsongIndex!==songIndex)
+            {  audioelement.src = `songs/${songIndex + 1}.mp3`;
                audioelement.currentTime = 0;
+            }
                audioelement.play();
                gif.style.opacity = 1;
                masterSongName.innerText = songs[songIndex].songName;
@@ -157,6 +156,21 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         }
 
     });
+});
+
+audioelement.addEventListener('ended', () => {
+    // Pause the audio
+    audioelement.pause();
+    
+    // Reset play button icons
+    masterplay.classList.remove('fa-circle-pause');
+    masterplay.classList.add('fa-circle-play');
+    masterplay2.classList.remove('fa-circle-pause');
+    masterplay2.classList.add('fa-circle-play');
+    
+    // Reset progress bars to 0
+    myprogressbar.value = 0;
+    myprogressbar1.value = 0;
 });
 
 document.getElementById('next').addEventListener('click', () => {
