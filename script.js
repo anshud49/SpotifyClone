@@ -325,6 +325,7 @@ document.getElementById('previous').addEventListener('click', () => {
 
 
 
+
 // Event listener for masterplay2
 document.getElementById('masterplay2').addEventListener('click', () => {
     const playIcon = document.getElementById(songIndex.toString());
@@ -350,6 +351,7 @@ document.getElementById('masterplay2').addEventListener('click', () => {
         gif.style.opacity = 0;
     }
 });
+
 
 //Listen to events
 audioelement.addEventListener('timeupdate', () => {
