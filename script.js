@@ -431,6 +431,7 @@ document.getElementById('up').addEventListener('click', function () {
     });
 });
 
+
 document.getElementById('down').addEventListener('click', function () {
 
     document.querySelector('.second').style.backgroundColor = '#1b1919b6';
