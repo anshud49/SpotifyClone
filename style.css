@@ -20,6 +20,14 @@ body {
     flex-basis: 100%;
 }
 
+.column1 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .row {
     margin-bottom: 10px;
     color: white;
@@ -46,7 +54,6 @@ body {
 .second {
     flex-basis: 53%;
     margin: 5px 0;
-    height: 105vh;
     overflow-y: auto;
     overflow-x: hidden;
     box-sizing: border-box;
@@ -540,6 +547,7 @@ nav ul li i {
     display: flex;
     align-items: center;
     padding: 0 0px;
+    justify-content: space-between;
     display: none;
 }
 
@@ -568,7 +576,7 @@ nav ul li i {
 }
 
 .sname1 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     margin: 0 5px;
     font-family: "Rubik";
@@ -589,6 +597,7 @@ nav ul li i {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px 0;;
 }
 
 .shuffle,
@@ -597,8 +606,11 @@ nav ul li i {
 .repeat {
     opacity: .5;
 }
-
-@media only screen and (max-width: 950px) {
+.info
+{
+    margin-top: 30px;
+}
+@media only screen and (max-width: 1024px) {
 
     .first {
         flex-basis: 10%;
@@ -932,7 +944,5 @@ nav ul li i {
         display: block;
     }
 
-    .cover1 img {
-        height: 500px;
-    }
+ 
 }

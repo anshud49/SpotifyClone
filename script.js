@@ -323,7 +323,32 @@ document.getElementById('previous').addEventListener('click', () => {
 // // Call the function initially
 // adjustImageWidth();
 
+// Add event listener for the resize event
+window.addEventListener('resize', adjustDisplay);
+function setHeightToWindowHeight() {
+    // Get the height of the window
+    let windowHeight = window.innerHeight;
 
+    // Subtract 10px from the window height
+    let adjustedHeight = windowHeight;
+    console.log(adjustedHeight,"Anshu");
+    // Set the height of elements with class 'second' and 'phone1' to the adjusted height
+    let secondElements = document.getElementsByClassName('second');
+    for (let i = 0; i < secondElements.length; i++) {
+        secondElements[i].style.height = adjustedHeight + 'px';
+    }
+
+    let phone1Elements = document.getElementsByClassName('phone1');
+    for (let i = 0; i < phone1Elements.length; i++) {
+        phone1Elements[i].style.height = adjustedHeight + 'px';
+    }
+}
+
+// Call the function initially
+setHeightToWindowHeight();
+
+// Add event listener for window resize event
+window.addEventListener('resize', setHeightToWindowHeight); 
 
 
 // Event listener for masterplay2
@@ -422,7 +447,7 @@ document.getElementById('up').addEventListener('click', function () {
     document.querySelector('.second').style.padding = '5px 20px';
     // Show .second and .phone1
     document.querySelectorAll('.second , .phone1').forEach(function (element) {
-        element.style.display = 'inline';
+        element.style.display = 'flex';
     });
 
     // Hide .bottom, .hide1, .fplay, .splay
@@ -467,5 +492,3 @@ function adjustDisplay() {
 // Call the adjustDisplay function when the page loads
 adjustDisplay();
 
-// Add event listener for the resize event
-window.addEventListener('resize', adjustDisplay);
