@@ -419,7 +419,7 @@ document.getElementById('previous1').addEventListener('click', () => {
 document.getElementById('up').addEventListener('click', function () {
     // Change background-color of .second
     document.querySelector('.second').style.backgroundColor = 'rgba(13, 156, 185, 0.322)';
-    document.querySelector('.second').style.padding = '20px 20px';
+    document.querySelector('.second').style.padding = '5px 20px';
     // Show .second and .phone1
     document.querySelectorAll('.second , .phone1').forEach(function (element) {
         element.style.display = 'inline';
@@ -468,4 +468,3 @@ adjustDisplay();
 
 // Add event listener for the resize event
 window.addEventListener('resize', adjustDisplay);
-
