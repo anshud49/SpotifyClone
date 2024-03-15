@@ -19,6 +19,8 @@ let art2 = document.getElementById('art2');
 let myprogressbar1 = document.getElementById('myprogressbar1');
 let previous1 = document.getElementById('previous1');
 let masterplay2 = document.getElementById('masterplay2');
+let shuffle = 0;
+let repeat = 0;
 
 let songs = [
     { songName: "Duniya Kisi Ke Pyar me", artist: "Mehdi Hassan", filepath: "songs/1.mp3", coverpath: "covers/1.jpg" },
@@ -91,56 +93,24 @@ const makeAllPlays = () => {
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
     element.addEventListener('click', (e) => {
         makeAllPlays();
-        let prevsongIndex=songIndex;
+        let prevsongIndex = songIndex;
 
         songIndex = parseInt(e.target.id);
         const playIcon = e.target;
-        
-        
-        if ( audioelement.paused || audioelement.currentTime <= 0) {
 
-            if(prevsongIndex!==songIndex)
-            {  audioelement.src = `songs/${songIndex + 1}.mp3`;
-               audioelement.currentTime = 0;
+
+        if (audioelement.paused || audioelement.currentTime <= 0) {
+
+            if (prevsongIndex !== songIndex) {
+                audioelement.src = `songs/${songIndex + 1}.mp3`;
+                audioelement.currentTime = 0;
             }
-               audioelement.play();
-               gif.style.opacity = 1;
-               masterSongName.innerText = songs[songIndex].songName;
-               sname.innerText = songs[songIndex].songName;
-               sname1.innerText = songs[songIndex].songName; // Update sname1
-               sname2.innerText = songs[songIndex].songName; 
-               cov.src = songs[songIndex].coverpath;
-               cov2.src = songs[songIndex].coverpath; // Update cov2
-               art.innerText = songs[songIndex].artist;
-               art2.innerText = songs[songIndex].artist; // Update art2
-               playIcon.classList.remove('fa-circle-play');
-               playIcon.classList.add('fa-circle-pause');
-               masterplay.classList.remove('fa-circle-play');
-               masterplay.classList.add('fa-circle-pause');
-               masterplay2.classList.remove('fa-circle-play');
-               masterplay2.classList.add('fa-circle-pause');
-        }
-
-         else
-          {
-            playIcon.classList.remove('fa-circle-pause');
-            playIcon.classList.add('fa-circle-play');
-            masterplay.classList.remove('fa-circle-pause');
-            masterplay.classList.add('fa-circle-play');
-            masterplay2.classList.remove('fa-circle-pause');
-            masterplay2.classList.add('fa-circle-play');
-            audioelement.pause();
-            
-            if(prevsongIndex!==songIndex)
-            {
-            audioelement.src = `songs/${songIndex + 1}.mp3`;
-            audioelement.currentTime = 0;
             audioelement.play();
             gif.style.opacity = 1;
             masterSongName.innerText = songs[songIndex].songName;
             sname.innerText = songs[songIndex].songName;
             sname1.innerText = songs[songIndex].songName; // Update sname1
-            sname2.innerText = songs[songIndex].songName; 
+            sname2.innerText = songs[songIndex].songName;
             cov.src = songs[songIndex].coverpath;
             cov2.src = songs[songIndex].coverpath; // Update cov2
             art.innerText = songs[songIndex].artist;
@@ -151,26 +121,130 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
             masterplay.classList.add('fa-circle-pause');
             masterplay2.classList.remove('fa-circle-play');
             masterplay2.classList.add('fa-circle-pause');
-            } 
+        }
+
+        else {
+            playIcon.classList.remove('fa-circle-pause');
+            playIcon.classList.add('fa-circle-play');
+            masterplay.classList.remove('fa-circle-pause');
+            masterplay.classList.add('fa-circle-play');
+            masterplay2.classList.remove('fa-circle-pause');
+            masterplay2.classList.add('fa-circle-play');
+            audioelement.pause();
+
+            if (prevsongIndex !== songIndex) {
+                audioelement.src = `songs/${songIndex + 1}.mp3`;
+                audioelement.currentTime = 0;
+                audioelement.play();
+                gif.style.opacity = 1;
+                masterSongName.innerText = songs[songIndex].songName;
+                sname.innerText = songs[songIndex].songName;
+                sname1.innerText = songs[songIndex].songName; // Update sname1
+                sname2.innerText = songs[songIndex].songName;
+                cov.src = songs[songIndex].coverpath;
+                cov2.src = songs[songIndex].coverpath; // Update cov2
+                art.innerText = songs[songIndex].artist;
+                art2.innerText = songs[songIndex].artist; // Update art2
+                playIcon.classList.remove('fa-circle-play');
+                playIcon.classList.add('fa-circle-pause');
+                masterplay.classList.remove('fa-circle-play');
+                masterplay.classList.add('fa-circle-pause');
+                masterplay2.classList.remove('fa-circle-play');
+                masterplay2.classList.add('fa-circle-pause');
+            }
 
         }
 
     });
 });
 
+// Function to handle click on shuffle icon
+function toggleShuffle() {
+    const shufIcon = document.getElementById('shuf');
+    if (shuffle === 0) {
+        shufIcon.style.color = 'green';
+        shufIcon.style.opacity = '1';
+        shuffle = 1;
+    } else {
+        shufIcon.style.color = 'white';
+        shufIcon.style.opacity = '.5';
+        shuffle = 0;
+    }
+}
+
+// Function to handle click on repeat icon
+function toggleRepeat() {
+    const repIcon = document.getElementById('rep');
+    if (repeat === 0) {
+        repIcon.style.color = 'green';
+        repIcon.style.opacity = '1';
+        repeat = 1;
+    } else {
+        repIcon.style.color = 'white';
+        repIcon.style.opacity = '.5';
+        repeat = 0;
+    }
+}
+
+// Event listeners for click on shuffle and repeat icons
+document.getElementById('shuf').addEventListener('click', toggleShuffle);
+document.getElementById('rep').addEventListener('click', toggleRepeat);
+
+function getRandomNumberExceptPrevious() {
+    let newDig;
+    do {
+        newDig = Math.floor(Math.random() * 10);
+    } while (newDig === songIndex);
+    return newDig;
+}
+
 audioelement.addEventListener('ended', () => {
     // Pause the audio
     audioelement.pause();
-    
+
     // Reset play button icons
     masterplay.classList.remove('fa-circle-pause');
     masterplay.classList.add('fa-circle-play');
     masterplay2.classList.remove('fa-circle-pause');
     masterplay2.classList.add('fa-circle-play');
-    
+
     // Reset progress bars to 0
     myprogressbar.value = 0;
     myprogressbar1.value = 0;
+
+    if (repeat === 1) {
+        audioelement.currentTime = 0;
+        audioelement.play();
+        masterplay.classList.remove('fa-circle-play');
+        masterplay.classList.add('fa-circle-pause');
+        masterplay2.classList.remove('fa-circle-play');
+        masterplay2.classList.add('fa-circle-pause');
+    }
+    
+   else if (shuffle === 1) {
+        let previousSongIndex = songIndex; // Store the previous song index for comparison
+        songIndex = getRandomNumberExceptPrevious();
+
+        console.log('Previous song index:', previousSongIndex);
+        console.log('New song index:', songIndex);
+        audioelement.src = `songs/${songIndex +1}.mp3`;
+        console.log('Audio source:', audioelement.src); // Log the audio source to verify
+        audioelement.currentTime = 0;
+        audioelement.play();
+        gif.style.opacity = 1;
+        masterSongName.innerText = songs[songIndex].songName;
+        sname.innerText = songs[songIndex].songName;
+        sname1.innerText = songs[songIndex].songName; // Update sname1
+        sname2.innerText = songs[songIndex].songName;
+        cov.src = songs[songIndex].coverpath;
+        cov2.src = songs[songIndex].coverpath;
+        art.innerText = songs[songIndex].artist;
+        art2.innerText = songs[songIndex].artist;
+        masterplay.classList.remove('fa-circle-play');
+        masterplay.classList.add('fa-circle-pause');
+        masterplay2.classList.remove('fa-circle-play');
+        masterplay2.classList.add('fa-circle-pause');
+    }
 });
 
 document.getElementById('next').addEventListener('click', () => {
@@ -188,7 +262,7 @@ document.getElementById('next').addEventListener('click', () => {
     masterSongName.innerText = songs[songIndex].songName;
     sname.innerText = songs[songIndex].songName;
     sname1.innerText = songs[songIndex].songName; // Update sname1
-    sname2.innerText = songs[songIndex].songName; 
+    sname2.innerText = songs[songIndex].songName;
     cov.src = songs[songIndex].coverpath;
     cov2.src = songs[songIndex].coverpath;
     art.innerText = songs[songIndex].artist;
@@ -303,7 +377,7 @@ document.getElementById('next1').addEventListener('click', () => {
     masterSongName.innerText = songs[songIndex].songName;
     sname.innerText = songs[songIndex].songName;
     sname1.innerText = songs[songIndex].songName; // Update sname1
-    sname2.innerText = songs[songIndex].songName; 
+    sname2.innerText = songs[songIndex].songName;
     cov.src = songs[songIndex].coverpath;
     cov2.src = songs[songIndex].coverpath; // Update cov2
     art.innerText = songs[songIndex].artist;
@@ -329,7 +403,7 @@ document.getElementById('previous1').addEventListener('click', () => {
     gif.style.opacity = 1;
     sname.innerText = songs[songIndex].songName;
     sname1.innerText = songs[songIndex].songName; // Update sname1
-    sname2.innerText = songs[songIndex].songName; 
+    sname2.innerText = songs[songIndex].songName;
     cov.src = songs[songIndex].coverpath;
     cov2.src = songs[songIndex].coverpath; // Update cov2
     art.innerText = songs[songIndex].artist;
@@ -340,51 +414,51 @@ document.getElementById('previous1').addEventListener('click', () => {
     masterplay.classList.add('fa-circle-pause');
 });
 
-document.getElementById('up').addEventListener('click', function() {
+document.getElementById('up').addEventListener('click', function () {
     // Change background-color of .second
     document.querySelector('.second').style.backgroundColor = 'rgba(13, 156, 185, 0.322)';
     document.querySelector('.second').style.padding = '20px 20px';
     // Show .second and .phone1
-    document.querySelectorAll('.second , .phone1').forEach(function(element) {
+    document.querySelectorAll('.second , .phone1').forEach(function (element) {
         element.style.display = 'inline';
     });
 
     // Hide .bottom, .hide1, .fplay, .splay
-    document.querySelectorAll('.bottom, .hide1, .phone2,.fplay, .splay').forEach(function(element) {
+    document.querySelectorAll('.bottom, .hide1, .phone2,.fplay, .splay').forEach(function (element) {
         element.style.display = 'none';
     });
 });
 
-document.getElementById('down').addEventListener('click', function() {
+document.getElementById('down').addEventListener('click', function () {
 
-    document.querySelector('.second').style.backgroundColor = '#1b1919b6'; 
+    document.querySelector('.second').style.backgroundColor = '#1b1919b6';
     document.querySelector('.second').style.padding = '0px 0px';
-    document.querySelectorAll('.phone1').forEach(function(element) {
-        element.style.display = 'none'; 
+    document.querySelectorAll('.phone1').forEach(function (element) {
+        element.style.display = 'none';
     });
-    document.querySelectorAll(' .phone2,.hide1, .fplay, .splay').forEach(function(element) {
+    document.querySelectorAll(' .phone2,.hide1, .fplay, .splay').forEach(function (element) {
         element.style.display = 'inline';
     });
 
-    document.querySelectorAll('.bottom').forEach(function(element) {
+    document.querySelectorAll('.bottom').forEach(function (element) {
         element.style.display = 'flex';
     });
 });
 function adjustDisplay() {
     if (window.innerWidth > 600) {
         document.querySelector('.phone1').style.display = 'none';
-        document.querySelector('.second').style.backgroundColor = '#1b1919b6'; 
-        document.querySelectorAll('.phone1').forEach(function(element) {
-            element.style.display = 'none'; 
+        document.querySelector('.second').style.backgroundColor = '#1b1919b6';
+        document.querySelectorAll('.phone1').forEach(function (element) {
+            element.style.display = 'none';
         });
-        document.querySelectorAll(' .phone2,.hide1, .fplay, .splay').forEach(function(element) {
+        document.querySelectorAll(' .phone2,.hide1, .fplay, .splay').forEach(function (element) {
             element.style.display = 'inline';
         });
-    
-        document.querySelectorAll('.bottom').forEach(function(element) {
+
+        document.querySelectorAll('.bottom').forEach(function (element) {
             element.style.display = 'flex';
         });
-    } 
+    }
 }
 
 // Call the adjustDisplay function when the page loads
@@ -392,3 +466,4 @@ adjustDisplay();
 
 // Add event listener for the resize event
 window.addEventListener('resize', adjustDisplay);
+
