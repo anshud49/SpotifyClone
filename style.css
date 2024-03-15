@@ -315,7 +315,7 @@ nav ul li i {
 
 .item {
     height: auto;
-    width: auto;
+    max-width: 100%;
     margin: 0px 5px;
     padding: 10px 10px;
     background-color: #1b1919b6;
@@ -335,11 +335,12 @@ nav ul li i {
     display: flex;
     align-items: center;
     margin: auto;
+    width:100%;
 }
 
 .pic img {
     width: 100%;
-    height:25vh;
+    height:30   vh;
     border-radius: 10px;
     display: block;
 }

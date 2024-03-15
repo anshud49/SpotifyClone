@@ -225,29 +225,29 @@ document.getElementById('previous').addEventListener('click', () => {
     masterplay2.classList.add('fa-circle-pause');
 })
 
-function adjustImageWidth() {
-    var items = document.querySelectorAll('.item');
-    var maxWidth = 0;
+// function adjustImageWidth() {
+//     var items = document.querySelectorAll('.item');
+//     var maxWidth = 0;
 
-    // Find the maximum width among all .item divs
-    items.forEach(function(item) {
-        
-        maxWidth = Math.max(maxWidth, item.offsetWidth);
-    });
+//     // Find the maximum width among all .item divs
+//     items.forEach(function(item) {
 
-    // Set the width of all .item divs and their pic images to the maximum width
-    items.forEach(function(item) {
-        var image = item.querySelector('.pic img');
-        item.style.width = maxWidth + 'px';
-        image.style.width = '100%'; // Set the image width to fill the parent div
-    });
-}
+//         maxWidth = Math.max(maxWidth, item.offsetWidth);
+//     });
 
-// Call the function when the window is resized
-window.addEventListener('resize', adjustImageWidth);
+//     // Set the width of all .item divs and their pic images to the maximum width
+//     items.forEach(function(item) {
+//         var image = item.querySelector('.pic img');
+//         item.style.width = maxWidth + 'px';
+//         image.style.width = '100%'; // Set the image width to fill the parent div
+//     });
+// }
 
-// Call the function initially
-adjustImageWidth();
+// // Call the function when the window is resized
+// window.addEventListener('resize', adjustImageWidth);
+
+// // Call the function initially
+// adjustImageWidth();
 
 
 
