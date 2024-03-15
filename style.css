@@ -878,34 +878,35 @@ nav ul li i {
     }
 
     .icons {
-        margin-top: 10px;
+        margin-top: 0;
         margin-bottom: 5px;
         padding: 2px 2px;
-
     }
 
     #masterplay {
         opacity: 0.9;
-        font-size: 22px;
+        font-size: 30px;
     }
 
     #previous {
-        font-size: 15px;
+        font-size: 22px;
         opacity: 0.5;
     }
 
     #next {
-        font-size: 15px;
+        font-size: 22px;
         opacity: 0.5;
     }
 
     .progressbar input {
-        height: 1vh;
+        height: .8vh;
+        
         cursor: pointer;
+        margin-bottom: 5px;
     }
 
     .sinfo {
-        font-size: 12px;
+        font-size: 15px;
         margin-top: 4px;
     }
 
@@ -920,11 +921,14 @@ nav ul li i {
 
     .upper i {
         display: inline;
-
     }
 
     .n4 {
         display: none;
+    }
+    #up
+    {
+        font-size: 20px;;
     }
 
 }
