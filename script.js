@@ -231,6 +231,7 @@ function adjustImageWidth() {
 
     // Find the maximum width among all .item divs
     items.forEach(function(item) {
+        
         maxWidth = Math.max(maxWidth, item.offsetWidth);
     });
 
