@@ -160,28 +160,38 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
 
 // Function to handle click on shuffle icon
 function toggleShuffle() {
-    const shufIcon = document.getElementById('shuf');
+    const shufIcon1 = document.getElementById('shuf');
+    const shufIcon2 = document.getElementById('shuf1');
     if (shuffle === 0) {
-        shufIcon.style.color = 'green';
-        shufIcon.style.opacity = '1';
+        shufIcon1.style.color = 'green';
+        shufIcon1.style.opacity = '1';
+        shufIcon2.style.color = 'green';
+        shufIcon2.style.opacity = '1';
         shuffle = 1;
     } else {
-        shufIcon.style.color = 'white';
-        shufIcon.style.opacity = '.5';
+        shufIcon1.style.color = 'white';
+        shufIcon1.style.opacity = '.5';
+        shufIcon2.style.color = 'white';
+        shufIcon2.style.opacity = '.5';
         shuffle = 0;
     }
 }
 
 // Function to handle click on repeat icon
 function toggleRepeat() {
-    const repIcon = document.getElementById('rep');
+    const repIcon1 = document.getElementById('rep');
+    const repIcon2 = document.getElementById('rep1');
     if (repeat === 0) {
-        repIcon.style.color = 'green';
-        repIcon.style.opacity = '1';
+        repIcon1.style.color = 'green';
+        repIcon1.style.opacity = '1';
+        repIcon2.style.color = 'green';
+        repIcon2.style.opacity = '1';
         repeat = 1;
     } else {
-        repIcon.style.color = 'white';
-        repIcon.style.opacity = '.5';
+        repIcon1.style.color = 'white';
+        repIcon1.style.opacity = '.5';
+        repIcon2.style.color = 'white';
+        repIcon2.style.opacity = '.5';
         repeat = 0;
     }
 }
@@ -189,6 +199,8 @@ function toggleRepeat() {
 // Event listeners for click on shuffle and repeat icons
 document.getElementById('shuf').addEventListener('click', toggleShuffle);
 document.getElementById('rep').addEventListener('click', toggleRepeat);
+document.getElementById('shuf1').addEventListener('click', toggleShuffle);
+document.getElementById('rep1').addEventListener('click', toggleRepeat);
 
 function getRandomNumberExceptPrevious() {
     let newDig;
@@ -331,7 +343,6 @@ function setHeightToWindowHeight() {
 
     // Subtract 10px from the window height
     let adjustedHeight = windowHeight;
-    console.log(adjustedHeight,"Anshu");
     // Set the height of elements with class 'second' and 'phone1' to the adjusted height
     let secondElements = document.getElementsByClassName('second');
     for (let i = 0; i < secondElements.length; i++) {
